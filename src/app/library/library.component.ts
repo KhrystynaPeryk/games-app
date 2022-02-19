@@ -9,7 +9,7 @@ import { FriendsService } from '../friends.service';
 export class LibraryComponent implements OnInit {
   constructor(public friendservice: FriendsService) { }
   ngOnInit(): void {
-    console.log(this.friendservice.myLibraryArray) // because the page reloads and all data disapears from the array
+    console.log(this.friendservice.myLibraryArray)
   }
 
   handleGameClicked(game: any) {

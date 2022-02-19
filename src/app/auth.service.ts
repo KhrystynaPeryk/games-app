@@ -9,7 +9,7 @@ export class AuthService {
             username: '',
             email: 'my_mail@mail.com',
             password: 'myPassword',
-            age: 30,
+            age: 30
         }
     }
     isAuthenticated() {

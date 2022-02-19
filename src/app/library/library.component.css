@@ -1,4 +1,4 @@
-section {
+.library-section {
     background-color: #c3e2d4;
     width: 60%;
     height: 75vh;
@@ -7,7 +7,7 @@ section {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     overflow: auto;
 }
-.games-cards-container {
+.library-section__games-cards-container {
     display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: auto auto auto;
@@ -15,7 +15,7 @@ section {
     column-gap: 14%;
 }
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
 }
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 

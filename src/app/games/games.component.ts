@@ -10,6 +10,7 @@ export class GamesComponent implements OnInit {
   searchTerm!: string
   searchedGames: any
   list: any[] = []
+  // list = {Strategy: true, Action: true, Zombie: true}
   gamesArray = this.friendservice.gamesArray
   tagsFilter: string[] = [];
 
@@ -65,50 +66,39 @@ export class GamesComponent implements OnInit {
     }
   }
 
-  // filterByTag(tag: any) {
-  //   console.log('filterByTag()', tag)
-  //   if (tag === 'Strategy') {
-  //       this.searchedGames = this.gamesArray.filter((game: any) => {
-  //       let res = game.tag.includes('Action') || game.tag.includes('Zombie')
-  //       return res
-  //     });
-      
-  //   } else if (tag === 'Action') {
-  //       this.searchedGames = this.gamesArray.filter((game: any) => {
-  //       let res = game.tag.includes('Strategy') || game.tag.includes('Zombie')
-  //       return res
-  //     });
-  //   } else if (tag === 'Zombie') {
-  //       this.searchedGames = this.gamesArray.filter((game: any) => {
-  //       let res = game.tag.includes('Action') || game.tag.includes('Strategy')
-  //       return res
-  //     });
-  //   }
-  // }
-
   filterByTag(tag: any) {
-    console.log('filterByTag()', tag)
     if (this.tagsFilter.includes(tag)) {
       this.tagsFilter = this.tagsFilter.filter(el => el !== tag)
     } else {
       this.tagsFilter.push(tag)
     }
-    console.log('tagsFilter array', this.tagsFilter)
     if (this.tagsFilter.length === 0) {
       this.searchedGames = this.gamesArray
       return this.searchedGames
-    } else {
-      let checkBoxSearchGames = []
-      for (let tag of this.tagsFilter) {
-        for (let game of this.searchedGames) {
-          if (tag === game.tag) {
-            checkBoxSearchGames.push(game)
-          }
-        }
-      }
-      return this.searchedGames = checkBoxSearchGames
+    } else if (this.tagsFilter.length === 3) {
+      this.searchedGames = []
+      return this.searchedGames
+    } else if (this.tagsFilter.includes('Strategy') && (this.tagsFilter.includes('Action'))) {
+        return this.searchedGames = this.gamesArray.filter((game: any) => game.tag.includes('Zombie'))
+    } else if (this.tagsFilter.includes('Strategy') && (this.tagsFilter.includes('Zombie'))) {
+        return this.searchedGames = this.gamesArray.filter((game: any) => game.tag.includes('Action'))
+    } else if (this.tagsFilter.includes('Zombie') && (this.tagsFilter.includes('Action'))) {
+        return this.searchedGames = this.gamesArray.filter((game: any) => game.tag.includes('Strategy'))
+    } else if (this.tagsFilter.includes('Zombie')) {
+      let arr1 = this.gamesArray.filter((game: any) => game.tag.includes('Strategy'))
+      let arr2 = this.gamesArray.filter((game: any) => game.tag.includes('Action'))
+      this.searchedGames = arr1.concat(arr2)
+      return this.searchedGames
+    } else if (this.tagsFilter.includes('Strategy')) {
+      let arr1 = this.gamesArray.filter((game: any) => game.tag.includes('Zombie'))
+      let arr2 = this.gamesArray.filter((game: any) => game.tag.includes('Action'))
+      this.searchedGames = arr1.concat(arr2)
+      return this.searchedGames
+    } else if (this.tagsFilter.includes('Action')) {
+      let arr1 = this.gamesArray.filter((game: any) => game.tag.includes('Strategy'))
+      let arr2 = this.gamesArray.filter((game: any) => game.tag.includes('Zombie'))
+      this.searchedGames = arr1.concat(arr2)
+      return this.searchedGames
     }
-
   }
-
 }

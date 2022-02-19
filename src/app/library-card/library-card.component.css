@@ -1,4 +1,4 @@
-section {
+.library-card {
     align-items: flex-start;
     border: 1px solid whitesmoke;
     background-color: rgb(255, 255, 255);  
@@ -8,7 +8,7 @@ section {
     width: 30vh;
     height: 35vh;
 }
-button {
+.library-card button {
     height: 33px;
     padding-right: 25px;
     padding-left: 25px;
@@ -23,20 +23,20 @@ button:hover {
     background-color: rgb(124, 141, 173);
     opacity: 0.8;
 }
-.card-header {
+.library-card__card-header {
     background-color: rgb(241, 232, 220);
     padding: 2%;
     color: rgb(207, 167, 117);
 }
-.card-body {
+.library-card__card-body {
     padding: 2%;
     display: flex;
     flex-direction: column;
 }
-.card-header-price {
+.library-card__card-header-price {
     text-align: right;
 }
-#share-btn {
+.library-card__share-btn {
     background-color: white;
     color: rgb(124, 141, 173);
     margin-left: 1%;

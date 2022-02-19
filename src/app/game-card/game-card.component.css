@@ -1,4 +1,4 @@
-section {
+.game-card-section {
     align-items: flex-start;
     border: 1px solid whitesmoke;
     background-color: rgb(255, 255, 255);  
@@ -8,7 +8,7 @@ section {
     width: 25vh;
     height: 30vh;
 }
-#add-button {
+.game-card-section__button {
     height: 33px;
     padding-right: 25px;
     padding-left: 25px;
@@ -19,20 +19,20 @@ section {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     background-color: rgb(124, 141, 173);
 }
-#add-button:hover {
+.game-card-section__button:hover {
     background-color: rgb(124, 141, 173);
     opacity: 0.8;
 }
-.card-header {
+.game-card-section__card-header {
     background-color: rgb(241, 232, 220);
     padding: 2%;
     color: rgb(207, 167, 117);
 }
-.card-body {
+.game-card-section__card-body {
     padding: 2%;
     display: flex;
     flex-direction: column;
 }
-.card-header-price {
+.game-card-section__card-header-price {
     text-align: right;
 }
