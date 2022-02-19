@@ -1,0 +1,13 @@
+<section>
+    <div class="card-header">
+        <h2>{{games.name}}</h2>
+        <p class="card-header-price">{{games.price}}</p>
+    </div>
+    <div class="card-body">
+        <p>{{games.description}}</p>
+        <div>
+            <button type='submit' id='download-btn' (click)="download(games.name)">Download</button>
+            <button type='submit' id='share-btn' (click)="share(games.name)">Share</button>
+        </div>
+    </div>
+</section>

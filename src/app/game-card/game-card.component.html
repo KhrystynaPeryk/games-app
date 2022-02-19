@@ -1,0 +1,10 @@
+<section>
+    <div class="card-header">
+        <h2>{{games.name}}</h2>
+        <p class="card-header-price">{{games.price}}</p>
+    </div>
+    <div class="card-body">
+        <p>{{games.description}}</p>
+        <button type='submit' id='add-button' (click)="addGame(games)">Add to Library</button>
+    </div>
+</section>

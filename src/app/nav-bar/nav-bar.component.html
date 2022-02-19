@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        <li [routerLink]="['/games']" routerLinkActive="active"><fa-icon [icon]="faDiceD20"></fa-icon></li>
+        <li [routerLink]="['/games']" routerLinkActive="active">Games</li>
+        <li [routerLink]="['/library']" routerLinkActive="active">Library</li>
+        <li [routerLink]="['/friends']" routerLinkActive="active">Friends</li>
+        <li [routerLink]="['/profile']" routerLinkActive="active">Profile</li>
+        <li id="welcome" *ngIf="auth.isAuthenticated()">
+        <b *ngIf="auth.isAuthenticated()">Welcome {{auth.currentUser.username}} !</b>
+    </ul>
+  </nav>

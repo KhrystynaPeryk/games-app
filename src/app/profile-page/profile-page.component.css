@@ -1,0 +1,53 @@
+.login {
+    width: 325px;
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 80px;  
+    background: #81b29a;  
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;   
+}  
+h2 {  
+    text-align: center;  
+    color: #3d405b;  
+    padding: 20px;  
+}  
+label {  
+    font-size: 17px;  
+}  
+#profile-email, #profile-age, #profile-username {  
+    width: 100%;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#profile-button {
+    width: 103%;  
+    height: 33px;  
+    border: none;  
+    border-radius: 3px;
+    background-color: #3d405b;
+    color: #f4f1de;
+}
+#profile-button:hover {
+    background-color: #3d405b;
+    opacity: 0.5;
+}
+em {
+    float: right;
+    color: red;
+}
+#profile-button:disabled {
+    background-color: grey;
+    color: black;
+}
+#profile-button:disabled:hover {
+    background-color: grey;
+    opacity: 1;
+    color: black;
+}
+.error input {
+    background-color: #E3C3C5;
+}
