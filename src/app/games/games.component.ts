@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { FriendsService } from '../friends.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-games',
@@ -13,9 +15,10 @@ export class GamesComponent implements OnInit {
   gamesArray = this.friendservice.gamesArray;
   tagsFilter: string[] = [];
 
-  constructor(private friendservice: FriendsService) { }
+  constructor(private router: Router, private friendservice: FriendsService, private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.redirectToLogin()
     this.searchedGames = this.friendservice.gamesArray;
     this.list = [
       {
@@ -34,6 +37,12 @@ export class GamesComponent implements OnInit {
         checked: true
       }
     ]
+  }
+
+  redirectToLogin() {
+    if (!this.auth.isAuthenticated()) {
+      this.router.navigate(['/login'])
+    }
   }
 
   searchGames(searchTerm: string) {

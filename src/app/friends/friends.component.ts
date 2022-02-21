@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FriendsService } from '../friends.service';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-friends',
@@ -13,14 +15,21 @@ export class FriendsComponent implements OnInit {
   myFriendsBucket = this.fs.myFriendsBucket
   clicked = false
 
-  constructor(private fs: FriendsService) { }
+  constructor(private fs: FriendsService, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.redirectToLogin()
     this.myFriendsBucket = [
       {name:'cocoaegg'},
       {name:'cubefortress'},
       {name:'glazedbee'}
     ]
+  }
+
+  redirectToLogin() {
+    if (!this.auth.isAuthenticated()) {
+      this.router.navigate(['/login'])
+    }
   }
 
   searchFriends(searchBy: string) {
