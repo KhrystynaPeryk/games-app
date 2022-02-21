@@ -47,3 +47,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: grey; 
 }
+.friends-section__title {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}

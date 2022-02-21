@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
   login(loginFormValues: any): void {
     this.auth.loginUser(loginFormValues.email, loginFormValues.password)
     this.auth.updateCurrentUserEmailPass(loginFormValues.email, loginFormValues.password)
-
+    this.auth.showNav = true;
     console.log(this.auth.currentUser.email, this.auth.currentUser.username, this.auth.currentUser.password)
     this.router.navigate(['/profile'])
   }

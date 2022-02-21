@@ -3,7 +3,8 @@ import { IUser } from "./user.model";
 
 @Injectable()
 export class AuthService {
-    currentUser!:IUser 
+    currentUser!:IUser;
+    showNav = true;
     loginUser(email: string, password: string, username: string = 'John', age: number = 30) {
         this.currentUser = {
             username: '',

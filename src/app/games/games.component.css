@@ -67,3 +67,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: grey; 
 }
+.games-section__title {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}

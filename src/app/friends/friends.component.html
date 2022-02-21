@@ -1,5 +1,5 @@
 <section class="friends-section">
-    <h2>Friends</h2>
+    <h2 class="friends-section__title">Friends</h2>
     <form class="friends-section__form">
         <label>
             <span>Search Friends</span> 
@@ -9,8 +9,8 @@
             <button (click)="searchFriends(friendsInput.value)" type="submit">Search</button>   
         </div>
     </form>
-    <h2 *ngIf="clicked">Search Friends: {{searchBy}}</h2>
-    <h2 *ngIf="!clicked">My Friends</h2>
+    <h2 class="friends-section__title" *ngIf="clicked">Search Friends: {{searchBy}}</h2>
+    <h2 class="friends-section__title" *ngIf="!clicked">My Friends</h2>
     <app-friend-card *ngFor="let friend of searchedFriends" (friendClick)="handleFriendClicked($event)" [friends]="friend"></app-friend-card>
     <app-added-friend *ngFor="let friend of myFriendsBucket" (removeClick)="handleFriendRemoveClicked($event)" [friends]="friend"></app-added-friend>
 </section>

@@ -1,5 +1,5 @@
 <section class="games-section">
-    <h2>Games</h2>
+    <h2 class="games-section__title">Games</h2>
     <form class="games-section__form">
         <label>
             <span>Search Games</span> 
@@ -9,7 +9,7 @@
             <button (click)="searchGames(gamesInput.value)" type="submit">Search</button>   
         </div>
     </form>
-    <h2>Featured Games: {{searchTerm}}</h2>
+    <h2 class="games-section__title">Featured Games: {{searchTerm}}</h2>
     <div class="games-section__cards-container">
         <app-game-card *ngFor="let game of searchedGames" (gameClick)="handleGameClicked($event)" [games]="game"></app-game-card>
     </div>

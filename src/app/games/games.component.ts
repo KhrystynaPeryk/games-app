@@ -7,11 +7,10 @@ import { FriendsService } from '../friends.service';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  searchTerm!: string
-  searchedGames: any
-  list: any[] = []
-  // list = {Strategy: true, Action: true, Zombie: true}
-  gamesArray = this.friendservice.gamesArray
+  searchTerm!: string;
+  searchedGames: any;
+  list: any[] = [];
+  gamesArray = this.friendservice.gamesArray;
   tagsFilter: string[] = [];
 
   constructor(private friendservice: FriendsService) { }

@@ -1,17 +1,14 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-library-card',
   templateUrl: './library-card.component.html',
   styleUrls: ['./library-card.component.css']
 })
-export class LibraryCardComponent implements OnInit {
+export class LibraryCardComponent {
   @Input() games!: any
   @Output() gameClick = new EventEmitter<string>()
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   download(game: string) {
     console.log(game, 'downloaded')

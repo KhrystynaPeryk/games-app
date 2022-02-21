@@ -1,2 +1,2 @@
-<app-nav-bar *ngIf="auth.isAuthenticated()"></app-nav-bar>
+<app-nav-bar *ngIf="auth.isAuthenticated() && auth.showNav"></app-nav-bar>
 <router-outlet></router-outlet>
